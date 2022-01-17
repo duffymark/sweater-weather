@@ -14,7 +14,7 @@ const [weather, setWeather] = useState([]);
 
 // call API to BitWeather
 
- useEffect(() => {
+useEffect(() => {
     const apiKey = 'b708779c14f64973950cdad688a8ee24';
     axios({
       url: 'http://api.weatherbit.io/v2.0/current',
@@ -55,9 +55,15 @@ setSearchTerm(userInput);
       {weather.map((todaysWeather) => {
         return (
           
-          <p> { todaysWeather.city_name} { todaysWeather.temp } </p>
+        <>
+          <p> { todaysWeather.city_name}  </p>
+          <p> { todaysWeather.temp } </p>
+        </> 
+          // add a ternary operator if weather is sweater weather or not
+          // (https://github.com/HackerYou/bootcamp-notes/blob/main/react-and-firebase/intro-to-react.md)
         );
       })}
+
       <Footer />
     </div>
   )

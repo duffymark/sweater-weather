@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-        <h1>Hey All You Juno Alumni! Is it Sweater Weather Today?</h1>
+        <h1>Hey All You Juno Alum! Is it Sweater Weather Today?</h1>
     </header>
   )
 }
