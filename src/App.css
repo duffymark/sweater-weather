@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 /* SetUp */
 
@@ -19,13 +21,40 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
   max-width: 2160px;
 }
 
+/* Header */
+/* Change the color and the h1 */
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  line-height: 1px;
+}
+
+.logo {
+  height: 100px;
+  padding-right: 1%;
+}
+
 /* Typography */
 
 h1{
-  font-family: 'Oswald', sans-serif;
-  margin-top: 0; 
-  padding-top: 15%;
-  font-size: 3rem;
+  font-family: 'Oswald', sans-serif; 
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #d64c31;
+}
+
+p, button, label{
+  font-family: 'Roboto', sans-serif;
+}
+
+p{
+  font-weight: bold;
+}
+
+.temp{
+  font-size: 2rem;
 }
 
 .App {
@@ -37,9 +66,68 @@ h1{
   height: 100vh;
 }
 
+.sweaterWeather{
+  font-size: 2rem;
+  background: -webkit-linear-gradient(yellow, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.notSweaterWeather{
+  font-size: 2rem;
+}
+
+/* Return Layout*/
+
+.tempIcon{
+  display: flex;
+  justify-content: center;
+  padding: 0 2%;
+  align-items: center;
+}
+
+/* Input and Button */
+
+.submitButton {
+    margin: 0;
+    padding: 10px 30px;
+    border: none;
+    background: gold;
+    transition: 0.3s ease-in-out;
+    &:hover, 
+    &:focus {
+      background: black;
+      color: gold;
+    }
+    &:active{
+        color: red;    
+    }
+}
+
+.cityInput{
+  text-align: center;
+  width: 50%;
+  padding: 10px 0;
+  border: none;
+}
+
+.cityInput:focus {
+  outline: 5px solid gold;
+}
+
+label{ 
+  margin: 2% 0;
+  display:block; 
+}
+
+
 /* Footer */
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background-color: black;
     color: white;
     width: 100%;
@@ -73,6 +161,9 @@ a:focus{
 a:active{
   color: red;
 }
+
+/* TEST */
+
 
 
 

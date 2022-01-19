@@ -1,9 +1,12 @@
+import logo from './logo.png';
+
 const Header = () => {
   return (
     <header>
-        <h1>Hey All You Juno Alum! Is it Sweater Weather Today?</h1>
+        <img className="logo" src={logo} alt="logo" />
+        <h1>Sweater Weather</h1>
     </header>
   )
 }
 
-export default Header;
+export default Header; 
