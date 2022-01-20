@@ -1,6 +1,6 @@
 import axios from 'axios';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js'
 import Input from './Input.js'
