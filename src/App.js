@@ -39,7 +39,8 @@ const handleClick = async() => {
     }).catch((error) => { 
       if (error.message !== 'OK')
       alert('We are sorry your city was not found')
-    }) 
+    })
+  //}, [searchTerm]);
   //}, [searchTerm]) // }, [searchTerm]) add empty array to prevent callback func from running during every component re-render
 }
 
