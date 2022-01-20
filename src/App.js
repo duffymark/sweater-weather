@@ -24,6 +24,7 @@ const fetchWeatherData = async(city) => {
       dataResponse: 'json',
       params: {
         key: apiKey,
+        // country_code: 'CA',
         country: 'Canada',
         city: city
       }
@@ -38,6 +39,9 @@ const fetchWeatherData = async(city) => {
       if (error.message !== 'OK')
       alert('We are sorry your city was not found')
     })
+  //}, [searchTerm]);
+  //}, [searchTerm]) // }, [searchTerm]) add empty array to prevent callback func from running during every component re-render
+}
 
 const handleInput = (event) => {
 console.log('is this working?', event.target.value);
