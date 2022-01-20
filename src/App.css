@@ -24,7 +24,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 /* Header */
 /* Change the color and the h1 */
 header{
-  background: white;
+  background: #575757;
   line-height: 1px; 
   width: 100%; 
 }
@@ -34,6 +34,7 @@ header{
   justify-content: center;
   align-items: center;
   line-height: 1px;  
+  width: 100%;
 }
 
 .logo {
@@ -70,7 +71,7 @@ p, button, label, a{
 
 .App {
   text-align: center;
-  background: url(/fabrizio-conti-aExT3y92x5o-unsplash\(1\).jpg) center;
+  background: url(/x-xtgONQzGgOE-unsplash.jpg) center;
   background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -182,7 +183,40 @@ a:active{
   color: #d64c31;
 }
 
-/* TEST */
+/* Media Queries */
+
+@media (max-width: 950px) {
+  .searchAndButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+  }
+  .cityInput{
+    width: 100%;
+    
+  }
+  .submitButton{
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .headerContainer{
+    flex-direction: column;
+  }
+  .sweaterWeather{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .footerLinks{
+    margin-top: 5%;
+    flex-direction: column;
+  }
+}
+
 
 
 

@@ -9,15 +9,14 @@ function App() {
 
   //useStates
 
-const apiKey = 'b708779c14f64973950cdad688a8ee24';
+const apiKey = '11835b08a653433e998a492061031a38';
 const baseUrl= 'https://api.weatherbit.io/v2.0/current';
 
 const [weather, setWeather] = useState([]);
 const [userInput, setUserInput] = useState('');
-const [searchTerm, setSearchTerm] = useState('');
 
 // call API to BitWeather
-const handleClick = async() => {
+const fetchWeatherData = async(city) => {
 //useEffect(() => {
     axios({
       method: 'GET',
@@ -25,9 +24,8 @@ const handleClick = async() => {
       dataResponse: 'json',
       params: {
         key: apiKey,
-        // country_code: 'CA',
         country: 'Canada',
-        city: userInput
+        city: city
       }
     }).then( (response) => {
       console.log(response)
@@ -40,9 +38,6 @@ const handleClick = async() => {
       if (error.message !== 'OK')
       alert('We are sorry your city was not found')
     })
-  //}, [searchTerm]);
-  //}, [searchTerm]) // }, [searchTerm]) add empty array to prevent callback func from running during every component re-render
-}
 
 const handleInput = (event) => {
 console.log('is this working?', event.target.value);
@@ -51,7 +46,7 @@ setUserInput(event.target.value);
 
 const handleSubmit = (event) => {
 event.preventDefault();
-setSearchTerm(userInput);
+fetchWeatherData(userInput);
 setUserInput('');
 }
 
@@ -60,7 +55,6 @@ setUserInput('');
       <Header />
       
       <Input 
-      handleClick={ handleClick}
       handleInput={handleInput}
       handleSubmit={handleSubmit}
       userInput={userInput}
@@ -99,5 +93,3 @@ setUserInput('');
 }
 
 export default App;
-
-
