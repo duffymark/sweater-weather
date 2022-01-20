@@ -24,11 +24,16 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 /* Header */
 /* Change the color and the h1 */
 header{
+  background: white;
+  line-height: 1px; 
+  width: 100%; 
+}
+
+.headerContainer{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
-  line-height: 1px;
+  line-height: 1px;  
 }
 
 .logo {
@@ -36,20 +41,26 @@ header{
   padding-right: 1%;
 }
 
+/* Main Section */
+.mainSec{
+  width: 100%; 
+}
+
+
+
 /* Typography */
 
 h1{
   font-family: 'Oswald', sans-serif; 
   font-size: 3.5rem;
-  text-transform: uppercase;
   color: #d64c31;
 }
 
-p, button, label{
+p, button, label, a{
   font-family: 'Roboto', sans-serif;
 }
 
-p{
+.label{
   font-weight: bold;
 }
 
@@ -88,21 +99,30 @@ p{
 
 /* Input and Button */
 
-.submitButton {
+.submitButton{
     margin: 0;
     padding: 10px 30px;
     border: none;
-    background: gold;
     transition: 0.3s ease-in-out;
-    &:hover, 
-    &:focus {
-      background: black;
-      color: gold;
-    }
-    &:active{
-        color: red;    
-    }
+    background: #FFF176;
+    color: black;
 }
+
+.submitButton:hover{
+    background: black;
+    color: #d64c31;
+}
+
+.submitButton:active{
+    background: black;
+    color: #d64c31;
+}
+
+.submitButton:active{
+        color: white;    
+}
+  
+
 
 .cityInput{
   text-align: center;
@@ -112,7 +132,7 @@ p{
 }
 
 .cityInput:focus {
-  outline: 5px solid gold;
+  outline: 5px solid #29B6F6;
 }
 
 label{ 
@@ -156,10 +176,10 @@ a{
 a:hover,
 a:focus{
   background: black;
-  color: gold;
+  color: #d64c31;
 }
 a:active{
-  color: red;
+  color: #d64c31;
 }
 
 /* TEST */
