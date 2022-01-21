@@ -68,15 +68,15 @@ return (
             ? <h2 className="sweaterWeather">{ todaysWeather.city_name}, It's Sweater Weather!</h2> 
             : <h2 className="notSweaterWeather">{ todaysWeather.city_name}, Get a Jacket!</h2> 
             }
-            <p> { todaysWeather.weather.description } </p>
+            <p className='weatherDescription'> { todaysWeather.weather.description } </p>
         {// grab icon code and plug it into url to get weather icons
         }  
         <div className="tempIcon">
           <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description for today.' /> 
           <p className="temp"> { todaysWeather.temp }°C </p>
         </div>
-          <p>Feels Like: { todaysWeather.app_temp }</p>
-          <p>Updated at: { todaysWeather.ob_time }</p>
+          <p className='feelsLike'>Feels Like: { todaysWeather.app_temp }</p>
+          <p className='updatedTime'>Updated at: { todaysWeather.ob_time }</p>
         </div>
       </div> 
     );

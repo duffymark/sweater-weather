@@ -71,8 +71,22 @@ p, button, label, a{
   text-transform: uppercase;
 }
 
+.weatherDescription{
+  font-weight: bold;
+}
+
 .temp{
   font-size: 2rem;
+}
+
+.feelsLike{
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.updatedTime{
+  font-style: italic;
+  font-size: 1rem;
 }
 
 .App {
@@ -86,13 +100,18 @@ p, button, label, a{
 
 .sweaterWeather{
   font-size: 2rem;
-  background: -webkit-linear-gradient(yellow, orange);
+  background: linear-gradient( yellow, orange );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Cabin', sans-serif; 
+
 }
 
 .notSweaterWeather{
   font-size: 2rem;
+  color: black;
+  font-family: 'Cabin', sans-serif; 
+  text-shadow: 1px 1px yellow;
 }
 
 /* Return Layout*/
