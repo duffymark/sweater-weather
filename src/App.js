@@ -50,42 +50,41 @@ fetchWeatherData(userInput);
 setUserInput('');
 }
 
-  return (
-    <div className="App">
-      <Header />
+return (
+  <div className="App">
+    <Header />
       
-      <Input 
+    <Input 
       handleInput={handleInput}
       handleSubmit={handleSubmit}
       userInput={userInput}
-      />
+    />
 
-        {
-      //render the weather info dynamically to the screen
-      weather.map((todaysWeather) => {
-        return (
-            <div className ='weatherResults' key={todaysWeather.city_name}>
-
-              { //Check if its sweater weather
-              (todaysWeather.temp > '0')
-              ? <p className="sweaterWeather"> 👍 { todaysWeather.city_name}, It's Sweater Weather!! 👍🏾</p> 
-              : <p className="notSweaterWeather"> 🛑 { todaysWeather.city_name}, Get a Jacket 🛑</p> 
-              }
-              <p> { todaysWeather.weather.description } </p>
+{ //render the weather info dynamically to the screen
+  weather.map((todaysWeather) => {
+    return (
+      <div className ='weatherResults' key={todaysWeather.city_name}>
+        <div className='wrapper'>
+          { //Check if its sweater weather
+            (todaysWeather.temp > '0')
+            ? <h2 className="sweaterWeather">{ todaysWeather.city_name}, It's Sweater Weather!</h2> 
+            : <h2 className="notSweaterWeather">{ todaysWeather.city_name}, Get a Jacket</h2> 
+            }
+            <p> { todaysWeather.weather.description } </p>
           
-            <div className="tempIcon">
-            <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description' /> 
-            <p className="temp"> { todaysWeather.temp }°C </p>
+        <div className="tempIcon">
+          <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description.' /> 
+          <p className="temp"> { todaysWeather.temp }°C </p>
           </div>
           <p>Feels Like: { todaysWeather.app_temp }</p>
           <p> Updated at: { todaysWeather.ob_time }</p>
-          
-        </div> 
-        );
-      })}
+        </div>
+      </div> 
+    );
+})}
 
-      <Footer />
-    </div>
+  <Footer />
+  </div>
   )
 }
 
