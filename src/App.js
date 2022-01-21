@@ -7,7 +7,7 @@ import Input from './Input.js'
 
 function App() {
 
-  //useStates
+  // useStates
 
 const apiKey = '11835b08a653433e998a492061031a38';
 const baseUrl= 'https://api.weatherbit.io/v2.0/current';
@@ -17,14 +17,12 @@ const [userInput, setUserInput] = useState('');
 
 // call API to BitWeather
 const fetchWeatherData = async(city) => {
-//useEffect(() => {
     axios({
       method: 'GET',
       url: baseUrl,
       dataResponse: 'json',
       params: {
         key: apiKey,
-        // country_code: 'CA',
         country: 'Canada',
         city: city
       }
@@ -39,8 +37,6 @@ const fetchWeatherData = async(city) => {
       if (error.message !== 'OK')
       alert('We are sorry your city was not found')
     })
-  //}, [searchTerm]);
-  //}, [searchTerm]) // }, [searchTerm]) add empty array to prevent callback func from running during every component re-render
 }
 
 const handleInput = (event) => {
@@ -70,12 +66,11 @@ setUserInput('');
         return (
             <div className ='weatherResults' key={todaysWeather.city_name}>
 
-              { //Check if message failed
+              { //Check if its sweater weather
               (todaysWeather.temp > '0')
-              ? <p className="sweaterWeather"> 👍 { todaysWeather.city_name}, It's Sweater Weather!! 👍</p> 
-              : <p className="notSweaterWeather"> 😭 { todaysWeather.city_name}, Get a Jacket 😭</p> 
+              ? <p className="sweaterWeather"> 👍 { todaysWeather.city_name}, It's Sweater Weather!! 👍🏾</p> 
+              : <p className="notSweaterWeather"> 🛑 { todaysWeather.city_name}, Get a Jacket 🛑</p> 
               }
-
               <p> { todaysWeather.weather.description } </p>
           
             <div className="tempIcon">
@@ -86,8 +81,6 @@ setUserInput('');
           <p> Updated at: { todaysWeather.ob_time }</p>
           
         </div> 
-          // add a ternary operator if weather is sweater weather or not
-          // (https://github.com/HackerYou/bootcamp-notes/blob/main/react-and-firebase/intro-to-react.md)
         );
       })}
 

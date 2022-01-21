@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
 /* SetUp */
 
@@ -54,11 +55,11 @@ header{
 h1{
   font-family: 'Oswald', sans-serif; 
   font-size: 3.5rem;
-  color: #d64c31;
+  color: #FAF9F6;
 }
 
 p, button, label, a{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 .label{
@@ -117,10 +118,11 @@ p, button, label, a{
 .submitButton:active{
     background: black;
     color: #d64c31;
+    color: white;   
 }
 
-.submitButton:active{
-        color: white;    
+.submitButton:focus{
+    outline: 5px solid black;     
 }
   
 
@@ -133,7 +135,7 @@ p, button, label, a{
 }
 
 .cityInput:focus {
-  outline: 5px solid #29B6F6;
+  outline: 5px solid black;
 }
 
 label{ 
