@@ -67,7 +67,7 @@ return (
         <div className ='weatherResults' key={todaysWeather.city_name}>
           <div className='wrapper'>
             { //Check if its sweater weather (compare it to 5 degrees - higher yes, lower no)
-            (todaysWeather.temp > '5')
+            (todaysWeather.temp >= '5')
             ? <h2 className="sweaterWeather">{ todaysWeather.city_name}, It's Sweater Weather!</h2> 
             : <h2 className="notSweaterWeather">{ todaysWeather.city_name}, Get a Jacket!</h2> 
             }
