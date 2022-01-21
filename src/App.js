@@ -27,7 +27,6 @@ const fetchWeatherData = async(city) => {
         city: city
       }
     }).then( (response) => {
-      console.log(response)
       if(response.request.statusText === 'OK'){
         setWeather(response.data.data);
       } else {
@@ -40,7 +39,6 @@ const fetchWeatherData = async(city) => {
 }
 
 const handleInput = (event) => {
-console.log('is this working?', event.target.value);
 setUserInput(event.target.value);
 }
 
@@ -61,30 +59,31 @@ return (
     />
 
 { //render the weather info dynamically to the screen
-  weather.map((todaysWeather) => {
-    return (
-      <div className ='weatherResults' key={todaysWeather.city_name}>
-        <div className='wrapper'>
-          { //Check if its sweater weather
-            (todaysWeather.temp > '0')
+      weather.map((todaysWeather) => {
+      return (
+        <div className ='weatherResults' key={todaysWeather.city_name}>
+          <div className='wrapper'>
+            { //Check if its sweater weather (compare it to 5 degrees - higher yes, lower no)
+            (todaysWeather.temp > '5')
             ? <h2 className="sweaterWeather">{ todaysWeather.city_name}, It's Sweater Weather!</h2> 
-            : <h2 className="notSweaterWeather">{ todaysWeather.city_name}, Get a Jacket</h2> 
+            : <h2 className="notSweaterWeather">{ todaysWeather.city_name}, Get a Jacket!</h2> 
             }
             <p> { todaysWeather.weather.description } </p>
-          
+        {// grab icon code and plug it into url to get weather icons
+        }  
         <div className="tempIcon">
-          <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description.' /> 
+          <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description for today.' /> 
           <p className="temp"> { todaysWeather.temp }°C </p>
-          </div>
+        </div>
           <p>Feels Like: { todaysWeather.app_temp }</p>
-          <p> Updated at: { todaysWeather.ob_time }</p>
+          <p>Updated at: { todaysWeather.ob_time }</p>
         </div>
       </div> 
     );
 })}
 
-  <Footer />
-  </div>
+      <Footer />
+    </div>
   )
 }
 

@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
 /* SetUp */
@@ -15,7 +13,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-/* Wrappers */
+/* Wrapper */
 
 .wrapper {
   width: 90%;
@@ -24,7 +22,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 }
 
 /* Header */
-/* Change the color and the h1 */
+
 header{
   background: #575757;
   line-height: 1px; 
@@ -58,6 +56,10 @@ h1{
   font-size: 3.5rem;
   color: #FAF9F6;
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
+h2{
+  font-family: 'Cabin', sans-serif; 
 }
 
 p, button, label, a{
@@ -249,14 +251,7 @@ a:active{
   }
   }
 
-/* .weatherResults{
-  background: white;
-  margin: 0 20%;
-  align-content: center;
-  border-radius: 50px;
-  padding: 10px 0;
-  transition: 0.3;
-} */
+
 
 
 
