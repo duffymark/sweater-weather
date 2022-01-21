@@ -1,3 +1,5 @@
+/* Imported Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
@@ -58,11 +60,7 @@ h1{
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
 
-h2{
-  font-family: 'Cabin', sans-serif; 
-}
-
-p, button, label, a{
+h2, p, button, label, a{
   font-family: 'Cabin', sans-serif;
 }
 
@@ -89,6 +87,8 @@ p, button, label, a{
   font-size: 1rem;
 }
 
+/* Styles */
+
 .App {
   text-align: center;
   background: url(/x-xtgONQzGgOE-unsplash.jpg) center;
@@ -100,10 +100,12 @@ p, button, label, a{
 
 .sweaterWeather{
   font-size: 2rem;
-  background: linear-gradient( yellow, orange );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: yellow;
+  /* background: linear-gradient( yellow, orange );
+  -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   font-family: 'Cabin', sans-serif; 
+  text-shadow: 1px 1px black;
 
 }
 
@@ -149,8 +151,6 @@ p, button, label, a{
     outline: 5px solid black;     
 }
   
-
-
 .cityInput{
   text-align: center;
   width: 50%;
@@ -166,7 +166,6 @@ label{
   margin: 2% 0;
   display:block; 
 }
-
 
 /* Footer */
 

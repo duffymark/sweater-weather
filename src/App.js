@@ -7,15 +7,17 @@ import Input from './Input.js'
 
 function App() {
 
-  // useStates
+// store API and URL info
 
 const apiKey = '11835b08a653433e998a492061031a38';
 const baseUrl= 'https://api.weatherbit.io/v2.0/current';
 
+// useStates
+
 const [weather, setWeather] = useState([]);
 const [userInput, setUserInput] = useState('');
 
-// call API to BitWeather
+// call API to BitWeather & throw errors if needed
 const fetchWeatherData = async(city) => {
     axios({
       method: 'GET',
@@ -38,6 +40,7 @@ const fetchWeatherData = async(city) => {
     })
 }
 
+// Handle events 
 const handleInput = (event) => {
 setUserInput(event.target.value);
 }
@@ -69,12 +72,12 @@ return (
             : <h2 className="notSweaterWeather">{ todaysWeather.city_name}, Get a Jacket!</h2> 
             }
             <p className='weatherDescription'> { todaysWeather.weather.description } </p>
-        {// grab icon code and plug it into url to get weather icons
-        }  
-        <div className="tempIcon">
-          <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description for today.' /> 
-          <p className="temp"> { todaysWeather.temp }°C </p>
-        </div>
+            {// grab icon code and plug it into url to get weather icons
+            }  
+            <div className="tempIcon">
+              <img src= {`https://www.weatherbit.io/static/img/icons/${todaysWeather.weather.icon}.png`} alt='Icon of the weather description for today.' /> 
+              <p className="temp"> { todaysWeather.temp }°C </p>
+            </div>
           <p className='feelsLike'>Feels Like: { todaysWeather.app_temp }</p>
           <p className='updatedTime'>Updated at: { todaysWeather.ob_time }</p>
         </div>
